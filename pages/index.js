@@ -21,9 +21,9 @@ export default function Home() {
                 <button onClick={handleGoogleAuth}>
                     signIn Google
                 </button>
-                <button onClick={handleGithubAuth}>
+                {/* <button onClick={handleGithubAuth}>
                     signIn Github
-                </button>
+                </button> */}
                 <button onClick={handleSignOut}>
                     signOut
                 </button>
