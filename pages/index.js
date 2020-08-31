@@ -1,14 +1,17 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { useAuth } from '../lib/hooks/useAuth';
+import { useContextAuth } from '../lib/auth';
 
 export default function Home() {
     const {
         handleGoogleAuth,
         handleGithubAuth,
+        handleAnomAuth,
         handleSignOut,
         user,
-    } = useAuth();
+    } = useContextAuth();
+
     return (
         <div className={styles.container}>
             <Head>
@@ -24,10 +27,17 @@ export default function Home() {
                 <button onClick={handleGithubAuth}>
                     signIn Github
                 </button>
+                <button onClick={handleAnomAuth}>
+                    signIn Anom
+                </button>
                 <button onClick={handleSignOut}>
                     signOut
                 </button>
-                <p>{user ? user.email : 'no user'}</p>
+                {user && user.isAnonymous ? (
+                    'user is Anom '
+                ) : (
+                    <p>{user ? user.email : 'no user'}</p>
+                )}
             </main>
 
             <footer className={styles.footer}>
