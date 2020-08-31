@@ -24,6 +24,7 @@ export default function Home() {
                 {/* <button onClick={handleGithubAuth}>
                     signIn Github
                 </button> */}
+                signIn with github
                 <button onClick={handleSignOut}>
                     signOut
                 </button>
