@@ -40,7 +40,17 @@ const Dashboard = () => {
             <p>{JSON.stringify(site, null, 2)}</p>
             <hr />
             <h2>sites :</h2>
-            <p>{JSON.stringify(data, null, '****')}</p>
+            <div>
+                {data &&
+                    data.sites.map(site => (
+                        <div key={site.id}>
+                            <p>name : {site.name}</p>
+                            <p>url : {site.url}</p>
+                            <p>author: {site.author}</p>
+                            <hr />
+                        </div>
+                    ))}
+            </div>
         </div>
     );
 };
